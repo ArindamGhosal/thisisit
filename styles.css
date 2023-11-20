@@ -1,0 +1,23 @@
+
+.download-btn{
+    background-color: DodgerBlue;
+    color: white;
+    padding: 5px 5px;
+    font-size: 15px;
+    text-decoration: none;
+    border: radius 2px;
+}
+
+.download-btn:hover {
+    background-color: RoyalBlue;
+  }
+
+  h1{
+    /* font-family: ; */
+    font-weight: 20px;
+
+    color: white;
+  }
+  #C1{
+    color: black;
+  }

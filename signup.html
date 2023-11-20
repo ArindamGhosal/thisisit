@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase JS</title>
+    <link rel="stylesheet" href="signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    
+
+</head>
+
+<body>
+    <div class="main">
+        <!-- <div class="container"> -->
+        <div >
+            <label><b>Email</b></label>
+            <input
+                name="email" 
+                placeholder="Email" 
+                id="email" 
+                type="email"
+             />
+        </div>
+        <div>
+            <label><b>Password</b></label>
+            <input 
+                name="password" 
+                placeholder="Password"
+                id="password"
+                type="password"
+             />
+        </div>
+        <button 
+        class="submit-btn"
+         onclick="register()"
+         >Sign Up</button>
+         <br>
+
+         <button 
+        class="login-btn"
+         onclick="login()"
+         >Sign In</button>
+<br>
+         <button 
+        class="save-btn"
+         onclick="saveData()"
+         >Save Data</button>
+
+         <button 
+        class="read-btn"
+         onclick="readData()"
+         >Read Data</button>
+         <button 
+        class="read-btn"
+         onclick="updateData()"
+         >updateData</button>
+
+         <button 
+        class="read-btn"
+         onclick="deleteData()"
+         >Delete Data</button>
+         <br>
+         <button 
+        class="read-btn"
+         onclick="loginWithGoogle()"
+         >Google</button>
+         
+    </div>
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+<script src="login.js"></script>
+<script src="googlesign.js"></script>
+
+</html>

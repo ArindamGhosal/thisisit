@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase JS</title>
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    .fa {
+      padding: 20px;
+      font-size: 40px;
+      width: 80px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+      border-radius: 70%;
+    }
+    
+    .fa:hover {
+        opacity: 0.7;
+    }
+    
+    
+    
+    .fa-google {
+        background: #dd4b39;
+  color: white;
+    }
+    
+   
+    </style>
+</head>
+
+
+<body>
+    <div class="main">
+        <h1>Login</h1>
+        <!-- <div class="container"> -->
+        <div >
+
+            <label><b>Email</b></label>
+            <br>
+            <input
+                name="email" 
+                placeholder="Email" 
+                id="email" 
+                type="email"
+             />
+        </div>
+        <div>
+            <label><b>Password</b></label>
+            <br>
+            <input 
+                name="password" 
+                placeholder="Password"
+                id="password"
+                type="password"
+             />
+        </div>
+        <button 
+        class="login-btn"
+         onclick="login()"
+         >Sign In
+       </button>
+         <br>
+        <button 
+        class="submit-btn"
+         onclick="register()"
+         >Sign Up</button>
+<br>
+         
+         <button 
+        class="save-btn"
+         onclick="saveData()"
+         >Save Data</button>
+         <br>
+         <button 
+        class="read-btn"
+         onclick="readData()"
+         >Read Data</button>
+         <br>
+         <button 
+        class="read-btn"
+         onclick="updateData()"
+         >updateData</button>
+         <br>
+         <button 
+        class="read-btn"
+         onclick="deleteData()"
+         >Delete Data</button>
+         <br>
+         <button 
+        class="fa fa-google"
+         onclick="loginWithGoogle()"
+         ></button>
+        
+
+
+         
+    </div>
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+<script src="login.js"></script>
+<script src="googlesign.js"></script>
+
+</html>

@@ -1,0 +1,78 @@
+/* body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+ 
+} */
+
+.submit-btn {
+    /* position: absolute;
+    left: 40%;
+    top: 60%;
+    margin-top: 50 px; */
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0px 9px;
+    background-color: green;
+    color: white;
+    padding: 14px 20px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.login-btn{
+    /* position: absolute;
+    left: 50%;
+    top: 60%;
+    margin-top: 50 px; */
+    /* .btn { */
+        font-family: 'Ubuntu', sans-serif;
+        margin: 0px 9px;
+        background-color: green;
+        color: white;
+        padding: 14px 20px;
+        border: 2px solid grey;
+        border-radius: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    /* } */
+}
+ body {
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+    margin: 0px;
+    padding: 0px;
+    background: url('c7.webp');
+    
+    background-repeat: no-repeat;
+    height: auto;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+    background-position: center;
+    background-size: cover;
+    /* height: 100%;  */
+    /* height: 4544px; */
+    /* filter: blur(8px); */
+  
+} 
+.main{
+    /* background-position: center; */
+    font-size: 45px;
+    font-family: 'Ubuntu', sans-serif;
+        color: black;
+        text-align: center;
+    border: 5px solid black;
+margin: 50px 35px;
+padding: 250px;
+width: 33%;
+border-radius: 60px;
+
+/* background-position: center; */
+}
+/* .em{
+    font-size: 45px 
+} */

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptography Topics</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<style>
+ div.sticky {
+  /* position: -webkit-sticky;
+  position: sticky; */
+  top: 0;
+  padding: 5px;
+  /* background-color: #cae8ca; */
+  /* border: 2px solid #4CAF50; */
+}
+
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20x;
+  /* border: 3px solid green;  */
+}
+.Notes{
+    background-color: wheat;
+}
+.upper{
+    background-color: orange;
+}
+ .upper{
+            display: flex;
+            justify-content: center;
+            align-items:center;
+        } 
+
+body {
+  background-image: url('c3.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+</head>
+<body>
+<div class="upper">
+    <h1>Cryptography</h1>
+</div>
+
+
+<div class="sticky"><div class="center">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+      <a class="navbar-brand" href="#">Menu</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home Page</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="topics.html">Topics</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="PC.html">P&C</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Contributors</a> -->
+          <!-- <li class="nav-item">
+              <a class="nav-link" href="resources.html">Resources</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blogs</a>
+            </li>
+          </li>    
+        </ul>
+      </div>
+      <a class="btn btn-primary" href="signup.html" role="button">Sign In/Sign Up</a>  
+    </nav>
+    <br>
+    
+  </div></div>
+
+<div class="Notes" style="padding-bottom:2000px">
+ <p>1: <a href="#ITC">Introduction to Cryptography </a>, Classical Cryptosystem, Block Cipher. </p>   
+ 
+ <p>2: <a href="#DES">Data Encryption Standard (DES),Triple DES, Modes of Operation, Stream Cipher </a></p>  
+    <p>3: LFSR based Stream Cipher, Mathematical background, Abstract algebra, Number Theory. </p> 
+    <p>4: Modular Inverse, Extended Euclid Algorithm, Fermat's Little Theorem, Euler Phi-Function, Euler's theorem. </p> 
+    <p>5: Advanced Encryption Standard (AES), Introduction to Public Key Cryptosystem, Diffie-Hellman Key Exchange, Knapsack Cryptosystem, RSA Cryptosystem. </p> 
+    <p> 6: Primarily Testing, ElGamal Cryptosystem, Elliptic Curve over the Reals, Elliptic curve Modulo a Prime. </p> 
+    <p>7: Generalized ElGamal Public Key Cryptosystem, Rabin Cryptosystem. </p>
+    <p>8 : Message Authentication, Digital Signature, Key Management, Key Exchange, Hash Function. </p> 
+    <p>9 : Cryptographic Hash Function, Secure Hash Algorithm (SHA), Digital Signature Standard (DSS). </p> 
+    <p> 10: Cryptanalysis, Time-Memory Trade-off Attack, Differential and Linear Cryptanalysis. </p>
+    <p>  11: Cryptanalysis on Stream Cipher, Modern Stream Ciphers, Shamir's secret sharing and BE, Identity-based Encryption (IBE), Attribute-based Encryption (ABE). </p>
+    <p>12: Side-channel attack, The Secure Sockets Layer (SSL), Pretty Good Privacy (PGP), Introduction to Quantum Cryptography, Blockchain, Bitcoin and Cryptocurrency.  </p>
+
+    <p><div id = "ITC"><u>Introduction to Cryptography:-</u>
+      
+        <p>Cryptography is the study and practice of techniques for secure communication in the presence of third parties called adversaries. <br>It deals with developing and analyzing protocols that prevents malicious third parties from retrieving information being shared between two entities thereby following the various aspects of information security. <br>Secure Communication refers to the scenario where the message or data shared between two parties can’t be accessed by an adversary.<br> In Cryptography, an Adversary is a malicious entity, which aims to retrieve precious information or data thereby undermining the principles of information security.<br> Data Confidentiality, Data Integrity, Authentication and Non-repudiation are core principles of modern-day cryptography.
+            <br>
+
+            Confidentiality refers to certain rules and guidelines usually executed under confidentiality agreements which ensure that the information is restricted to certain people or places.<br>
+            Data integrity refers to maintaining and making sure that the data stays accurate and consistent over its entire life cycle.<br>
+            Authentication is the process of making sure that the piece of data being claimed by the user belongs to it.<br>
+            Non-repudiation refers to the ability to make sure that a person or a party associated with a contract or a communication cannot deny the authenticity of their signature over their document or the sending of a message.<br>
+        
+        Consider two parties Alice and Bob. <br>Now, Alice wants to send a message m to Bob over a secure channel. <br>So, what happens is as follows. <br>The sender’s message or sometimes called the Plaintext, is converted into an unreadable form using a Key k.<br> The resultant text obtained is called the Ciphertext.<br> This process is known as Encryption.<br> At the time of received, the Ciphertext is converted back into the plaintext using the same Key k, so that it can be read by the receiver.<br> This process is known as Decryption.
+        
+        Alice (Sender)       Bob (Receiver)
+        C = E (m, k)  ---->    m = D (C, k) 
+        
+        Here, C refers to the Ciphertext while E and D are the Encryption and Decryption algorithms respectively.<br> Let’s consider the case of Caesar Cipher or Shift Cipher as an example.<br> As the name suggests, in Caesar’s Cipher each character in a word is replaced by another character under some defined rules.<br> Thus, if A is replaced by D, B by E and so on.<br> Then, each character in the word would be shifted by a position of 3.<br> For example:
+        
+        Plaintext : Geeksforgeeks<br>
+        Ciphertext : Jhhnvirujhhnv </p>
+        
+      </div>
+      </p>
+    
+
+      <p><div id = "DES"><u>Data Encryption Standard (DES)</u>
+      
+        he Data Encryption Standard (DES) is a symmetric-key block cipher published by the National Institute of Standards and Technology (NIST).
+
+DES is an implementation of a Feistel Cipher. It uses 16 round Feistel structure. The block size is 64-bit. Though, key length is 64-bit, DES has an effective key length of 56 bits, since 8 of the 64 bits of the key are not used by the encryption algorithm (function as check bits only). General Structure of DES is depicted in the following illustration −
+<center>
+  <img id="DES1" src="des_structure.jpg" alt="Flowers in Chania">
+</center>
+
+Since DES is based on the Feistel Cipher, all that is required to specify DES is −
+
+Round function
+Key schedule
+Any additional processing − Initial and final permutation
+Initial and Final Permutation
+The initial and final permutations are straight Permutation boxes (P-boxes) that are inverses of each other. They have no cryptography significance in DES. The initial and final permutations are shown as follows −
+
+<center>
+  <img src="initial_and_final_permutation.jpg" alt="Nothing">
+</center>
+
+
+
+
+        
+      </div>
+      </p>
+      <BR><br>
+      1. Introduction
+      The symmetric cryptographic systems known as stream ciphers base their operation on the generation of binary sequences that are combined with the message to be encrypted by binary addition (XOR operation). The sequence used in the transmitter must also be generated in the receiver to recover the message by applying the XOR operation to the received ciphertext [1]. The concept of perfect secrecy defined by Shannon [2] establishes as a condition that the binary sequences used to encrypt the message (ciphering sequences) are random, have a length greater than or equal to the message, and are one time use. Although excellent random generators exist, the need to reproduce the sequence in the receiver makes it necessary to use pseudo-random sequences instead of true random ones. Therefore, pseudorandom number generators (PRNGs) constitute the fundamental part of any stream cipher.
+      One of the simplest and most widely used methods to generate cryptographic pseudorandom sequences is the linear feedback shift register (LFSR) [3]. This generator stands out for its simplicity and for the good statistical properties of the generated sequences. In addition, the behavior of the LFSR is completely characterized by the polynomial that defines the applied feedback. Thus, if the polynomial is primitive, the generated sequence reaches the maximum length, which is known as the m-sequence. However, these sequences are easily predictable from 2𝐿
+       known elements of the sequence generated by an L-stage LFSR. This makes the sequences obtained from an LFSR not directly usable. Instead, non-linear filtering or non-linear combinations of various LFSRs have to be applied to ensure the cryptographic security of stream ciphers, such as those used in mobile and wireless communication systems, e.g., Bluetooth [4], wireless area networks [5], or GSM [6]. On the other hand, although LFSRs are generically defined on a finite field 𝐺𝐹(𝑞)
+      , practical implementations of these ciphers are carried out on 𝐺𝐹(2)
+       to integrate with bitwise operations. Nevertheless, these operations are clearly inefficient when using current processors that work with 16-, 32-, or 64-bit words. For this reason, the extended Galois fields 𝐺𝐹(2𝑛)
+      , where 2𝑛
+       matches the processor word length, have been analyzed to substitute 𝐺𝐹(2)
+       in cryptographic applications [7,8,9]. In the particular case of LFSR-based stream ciphers, the SNOW 3G algorithm [10] is currently used in 3G and 4G mobile communication systems, and several proposals have recently appeared to be applied to 5G communications [11,12,13]. However, computations on an extended field are time consuming, much more than in the base field [14]. Although the bit generation rate improves n times the binary case, the overall performance of the system does not, sometimes being even lower. In fact, several methods have been developed to reduce computational time, such as precomputed tables, optimized algorithms for multiplication [15], or the use of representations of the 𝐺𝐹(2𝑛)
+       elements in terms of 𝐺𝐹(2𝑚)
+       elements with 𝑚<𝑛
+      . In contrast to binary case, where any primitive polynomial guarantees a sequence of maximum length, only certain primitive polynomials that facilitate its implementation are used in extended fields. This means that they do not require excessive resource consumption, as the SNOW 3G case does, defined to work on devices with 32-bit processors by combining operations with 32-bit and 8-bit arguments. On the other hand, the identification of primitive polynomials in 𝐺𝐹(2𝑛)
+       requires a much higher computational effort than in the binary case.
+      This article presents two methods that reduce the execution time for the implementation of an LFSR and the search for primitive polynomials in the extended filed 𝐺𝐹(2𝑛)
+      . These methods are based on the model that establishes a direct relationship between the m-sequence generated by an LFSR in 𝐺𝐹(2𝑛)
+       and the interleaving of n m-sequences generated by n LFSRs in 𝐺𝐹(2)
+      . This relationship was used by Komo and Lam [16] to build primitive polynomials in 𝐺𝐹(2𝑛)
+       in terms of primitive polynomials in 𝐺𝐹(2)
+      , establishing the relationships that must hold between both polynomials. We propose to use these relationships in the opposite direction; that is, we propose to represent the primitive polynomial over 𝐺𝐹(2𝑛)
+       in terms of binary LFSRs. In this way, the same sequences will be generated using only binary operations (XOR). However, moving from n-bit word operations to bit operations would be back to square one, since the main reason for using LFSR on extended fields is to take advantage of the capabilities of n-bit processors where bit operations are inefficient. Taking into account that the n binary LFSRs that allow generating the same sequence as the LFSR in 𝐺𝐹(2𝑛)
+       have all the same primitive feedback polynomial in 𝐺𝐹(2)
+      , the previous obstacle can be easily overcame. Thus, the calculation of the bit operations of the n binary LFSRs can be performed jointly, giving rise to XOR operations between n-bit words and eliminating the inefficiency generated by single-bit operations in this type of processor. The efficiency improvement provided by the proposed implementation turns it into a method especially suitable for cryptanalysis tasks where any execution time reduction in the systems under analysis is very appreciated. Therefore, security assessments performed to cryptosystems based on LFSR in extended fields must take into account the proposed implementation to report a more realistic security level. Additionally, the proposed method allows any primitive polynomial in 𝐺𝐹(2𝑛)
+       to be used as feedback polynomial of an LFSR, thus overcoming the current limitations.
+      The rest of the paper is organized as follows. In Section 2, the mathematical background and notation are introduced, with special emphasis on the LFSR fundamentals and the relationships between the m-sequences generated in extended and base fields, 𝐺𝐹(𝑞𝑛)
+       and 𝐺𝐹(𝑞)
+      . Section 3 describes the proposed implementation for the particular case of LFSRs defined in 𝐺𝐹(2𝑛)
+       through a different and more efficient way. Section 4 contains the algorithm proposed to test the primitiveness of polynomials making use of the same relationships. Finally, discussion about security and efficiency of the implementations and conclusion are included in Section 5 and Section 6, respectively.
+      2. Mathematical Background
+      Let 𝐺𝐹(𝑞)
+       be the finite field of q elements, q being a prime, and 𝐺𝐹[𝑞,𝑥]
+       the set of all polynomials with coefficients in 𝐺𝐹(𝑞)
+      . Equivalently, let 𝐺𝐹(𝑞𝑛)
+       be the finite field of 𝑞𝑛
+       elements, and 𝐺𝐹[𝑞𝑛,𝑥]
+       the set of all polynomials with coefficients from 𝐺𝐹(𝑞𝑛)
+      . A generator of the cyclic group of a finite field is called a primitive element of that field. Hence, a polynomial 𝑝(𝑥)∈𝐺𝐹[𝑞,𝑥]
+       of degree 𝑚≥1
+       is called primitive over 𝐺𝐹(𝑞)
+       if it is the minimal polynomial over 𝐺𝐹(𝑞)
+       of a primitive element 𝛼∈𝐺𝐹(𝑞𝑛)
+      . A primitive polynomial ℎ(𝑥)
+       of degree n allows one to construct 𝐺𝐹(𝑞𝑛)
+       in such a way that:
+      𝐺𝐹(𝑞𝑛)≈𝐺𝐹[𝑞,𝑥]/ℎ(𝑥)
+      (1)
+      The addition and multiplication in 𝐺𝐹(𝑞𝑛)
+       are the ones in 𝐺𝐹[𝑞,𝑥]
+      , but performing the module ℎ(𝑥)
+       reduction, as all the elements in 𝐺𝐹(𝑞𝑛)
+       can be represented as polynomials of degree less than n with coefficients in 𝐺𝐹(𝑞)
+      . On the other hand, any element 𝑎∈𝐺𝐹(𝑞𝑛)
+       can be expressed in terms of a basis {𝛼𝑛−1,⋯,𝛼2,𝛼,1}
+      , 𝛼
+       being a root of ℎ(𝑥)
+       in 𝐺𝐹(𝑞𝑛)
+      . Consequently, any element 𝑎∈𝐺𝐹(𝑞𝑛)
+       can be written as the vector (𝑎𝑛−1,⋯,𝑎1,𝑎0)
+       where:
+      𝑎=𝑎𝑛−1𝛼𝑛−1+⋯+𝑎1𝛼+𝑎01.
+      (2)
+      For 𝑞=2
+      , it is very common to use the hexadecimal notation as a compact representation of the elements in 𝐺𝐹(𝑞𝑛)
+      . Thus, if we use ℎ(𝑥)=𝑥8+𝑥4+𝑥3+𝑥2+1
+       to construct 𝐺𝐹(28)
+      , 𝛼
+       being a root of ℎ(𝑥)
+      , as any element in 𝐺𝐹(28)
+       can be represented as a power of 𝛼
+      , we can write the element 𝛼3
+       as (0,0,0,0,1,0,0,0)
+       or 0𝑥08
+       and the element 𝛼10=𝛼6+𝛼5+𝛼4+𝛼2
+       as (0,1,1,1,0,1,0,0)
+       or 0𝑥74
+      . Note that the powers of 𝛼
+       correspond to the vector components in descending order, beginning from the left, to facilitate the conversion to and from hexadecimal values.
+      2.1. Linear Feedback Shift Registers
+      An LFSR defined over 𝐺𝐹(𝑞)
+       is a collection of L memory cells 𝑏𝑖
+      , 0≤𝑖≤𝐿−1
+      , whose contents belong to that field and are updated synchronously by a master clock, by the following equations:
+      𝛾=𝑏𝐿−1𝑐1+𝑏𝐿−2𝑐2+⋯+𝑏1𝑐𝐿−1+𝑏0𝑐𝐿,𝑏𝑖=𝑏𝑖+1,0≤𝑖≤𝐿−2,𝑏𝐿−1=𝛾,
+      (3)giving rise to the sequence 𝐷=𝑑0𝑑1𝑑2⋯
+      , which is completely determined by the initial state of the cells, named seed, and the feedback coefficients 𝑐𝑖∈𝐺𝐹(𝑞)
+      , 1≤𝑖≤𝐿
+       according to the linear recurrence:
+      𝑑𝑖=𝑑𝑖−1𝑐1+𝑑𝑖−2𝑐2+⋯+𝑑1𝑐𝐿−1+𝑑0𝑐𝐿,
+      (4)where 𝑑0,𝑑1,⋯,𝑑𝐿−1
+       correspond to the seed (see Figure 1). The length of the sequence D can be analyzed in terms of the connection polynomial 𝑝(𝑥)
+       composed with the feedback coefficients:
+      𝑝(𝑥)=𝑐0+𝑐1𝑥+𝑐2𝑥2+⋯+𝑐𝐿−1𝑥𝐿−1+𝑐𝐿𝑥𝐿,
+      (5)in such a way that the maximal sequence length 𝑞𝐿−1
+       is achieved when 𝑝(𝑥)
+       is primitive. In such a case, the sequence is called m-sequence and is independent from the chosen seed.
+      Mathematics 10 00996 g001 550Figure 1. Linear feedback shift register.
+      Stream ciphers are mainly based on LFSRs defined over finite fields with 𝑞=2
+       [1]. Hence, the cell content is one bit, and the addition and multiplication correspond to XOR and AND operations, respectively. However, for efficiency reasons, in the generation process, LFSRs defined in 𝐺𝐹(2𝑛)
+       are also being used in current communication systems. When LFSR is defined in this extension field, the cells contain n-bit words, where n matches the processor’s word length. Although the equations that govern the LFSR are the same, as described above, addition and multiplication are defined as polynomial addition and multiplication modulus ℎ(𝑥)
+      , the polynomial used to construct the 𝐺𝐹(2𝑛)
+      . From now on, we shall use the notation <𝐿,𝑝(𝑥)>
+       to refer to an LFSR with L cells in 𝐺𝐹(2)
+       and connection polynomial 𝑝(𝑥)∈𝐺𝐹[2,𝑥]
+       of degree L. The form <𝐿,𝑝(𝑥),𝑛>
+       is for an LFSR of L cells in 𝐺𝐹(2𝑛)
+       and connection polynomial 𝑝(𝑥)∈𝐺𝐹[2𝑛,𝑥]
+       of degree L.
+      2.2. Binary Equivalent Model
+      Komo and Lam [16] proposed a method to generate primitive polynomials in 𝐺𝐹(𝑞𝑛)
+       using primitive polynomials in 𝐺𝐹(𝑞)
+       based on the relationship previously discovered by Park and Komo [17] between the m-sequences produced in 𝐺𝐹(𝑞𝑛)
+       and 𝐺𝐹(𝑞)
+      , in such a way that an m-sequence in 𝐺𝐹(𝑞𝑚)
+       can be decomposed into n m-sequences in 𝐺𝐹(𝑞)
+      . More precisely:
+      Theorem 1 (cf. [17], th 7). Let 𝑝(𝑥)
+       be a primitive polynomial of degree 𝑚·𝑛
+       in 𝐺𝐹[𝑞,𝑥]
+      . Let 𝑓(𝑥)
+       be one of the n primitive polynomials of degree m in 𝐺𝐹[𝑞𝑛,𝑥]
+       into which 𝑝(𝑥)
+       factors when viewed in 𝐺𝐹[𝑞𝑛,𝑥]
+      . Let 𝐷=𝑑0,𝑑1,⋯
+       be an m-sequence over 𝐺𝐹(𝑞𝑛)
+       generated by 𝑓(𝑥)
+      . If
+      𝑑𝑖=𝑑𝑖,0𝜆0+𝑑𝑖,1𝜆1+⋯+𝑑𝑖,𝑛−1𝜆𝑛−1
+      (6)where {𝜆0,𝜆1,⋯,𝜆𝑛−1}
+       is a basis for 𝐺𝐹(𝑞𝑛)
+       over 𝐺𝐹(𝑞)
+      , then the sequence 𝑑0,𝑗,𝑑1,𝑗,⋯
+       is an m-sequence of length 𝑞𝑛𝑚−1
+       over 𝐺𝐹(𝑞)
+      .
+      As one can observe, the sequence 𝑑0,𝑗,𝑑1,𝑗,⋯
+       is composed by the j-th component of each element 𝑑𝑖
+       in the sequence D. Equivalently, the sequence 𝑑0,𝑗,𝑑1,𝑗,⋯
+       can be considered as a decimation sequence obtained from D giving rise to the following set of decimated sequences, as it is shown in Figure 2:
+      𝐷𝑗=𝑑0,𝑗,𝑑1,𝑗,𝑑2,𝑗,⋯,
+      (7)
+      Mathematics 10 00996 g002 550Figure 2. Relationship between m-sequences in the extended and base fields.
+      Furthermore, as it is stated in [16], since the sequences 𝐷𝑗
+      , for 0≤𝑗≤𝑛−1
+      , are generated by the same polynomial 𝑓(𝑥)
+      , all of them are shifted versions of the same m-sequence. Hence, taking 𝐷0
+       as the reference, we can define 𝜃𝑗
+       as the shift of 𝐷𝑗
+       respect to 𝐷0
+      . In [16], a method to obtain a primitive polynomial 𝑓(𝑥)∈𝐺𝐹[𝑞𝑛,𝑥]
+       in terms of a given primitive polynomial 𝑝(𝑥)∈𝐺𝐹[𝑞,𝑥]
+       is proposed by means of the computation of the shifts 𝜃𝑗
+       that satisfy the relationship between the m-sequences in the extended and base fields.
+      3. Efficient LFSR Implementation
+      The relationship between the m-sequences on 𝐺𝐹(2𝑛)
+       and the m-sequences on 𝐺𝐹(2)
+      , as described in the previous section, also allows us to establish an equivalence between the LFSRs that generate them. This section presents a practical and efficient method to obtain such LFSRs, i.e., to obtain the feedback polynomial 𝑝(𝑥)
+       and the seeds of each LFSR <𝐿𝑛,𝑝(𝑥)>
+       that allow us to generate the same sequence as the LFSR <𝐿,𝑓(𝑥),𝑛>
+       from a given seed. Note that, according to the equivalent model, the n LFSRs in 𝐺𝐹(2)
+       have the same connection polynomial 𝑝(𝑥)
+       but different seeds, all of them related to the seed in 𝐺𝐹(2𝑛)
+      . Hence, in order to efficiently implement the LFSR <𝐿,𝑓(𝑥),𝑛>
+       using the equivalent model, it is necessary to solve three main questions: the computation of 𝑝(𝑥)
+      , the computation of the seeds, and how to speed up the performance of the binary LFSRs.
+      Since the connection polynomial 𝑓(𝑥)
+       is primitive, the minimal polynomial 𝑝(𝑥)
+       of the decimated sequences 𝐷𝑖
+       is also primitive and unique for 0≤𝑖≤𝑛−1
+      . Hence, 𝑝(𝑥)
+       can be obtained analyzing a decimated sequence using the Massey–Berlekamp algorithm [18]. Consequently, the following Algorithm 1 is defined.
+      Algorithm 1: Computation of connection polynomial 𝑝(𝑥)
+      .
+       input  : LFSR <𝐿,𝑓(𝑥),𝑛>
+      
+       output: 𝑝(𝑥)
+       in LFSR <𝐿𝑛,𝑝(𝑥)>
+      Implement the LFSR<𝐿,𝑓(𝑥),𝑛>
+      ;
+      Generate2𝐿𝑛+1
+      elements, at least, using any nonzero seed;
+      Obtain a decimated sequence𝐷𝑖
+      for any𝑖,0≤𝑖≤𝑛−1
+      ;
+      Obtain the minimal polynomial𝑝(𝑥)
+      of the𝐷𝑖
+      generated in step 3
+      Once 𝑝(𝑥)
+       has been determined, we can construct the n LFSRs <𝐿𝑛,𝑝(𝑥)>
+      , but we need their respective seeds in order to generate the same sequence as that generated from the initial seed 𝑠=(𝑑0,𝑑1,⋯,𝑑𝐿−1)
+       in the extended field. As it is derived from the equivalent model, the L known elements in 𝐺𝐹(2𝑛)
+       that compose the initial seed only provide us with 𝑛𝐿
+       bits, while 𝑛2𝐿
+       bits are needed to complete the n seeds in 𝐺𝐹(2)
+       (see Figure 3). Thus, the seed 𝑠𝑗
+       of 𝐷𝑗
+       can be partially written in terms of the seed s of D as:
+      𝑠𝑗=𝑑0,𝑗,𝑑1,𝑗,⋯,𝑑𝐿−1,𝑗,𝑑𝐿,𝑗,⋯,𝑑𝑛·𝐿−1,𝑗
+      (8)where 𝑑𝐿,𝑗,⋯,𝑑𝑛·𝐿−1,𝑗
+       are unknown for 0≤𝑗≤𝑛−1
+      . However, the shifts 𝜃𝑖
+       that relate the binary sequences to each other allow us to obtain the seeds completely. The following subsections describes the computation of 𝜃𝑗
+       and 𝑠𝑗
+      .
+      Mathematics 10 00996 g003 550Figure 3. LFSR seeds in the binary equivalent model.
+      3.1. Computation of Shifts
+      All decimated sequences 𝐷𝑗
+       have the same primitive minimal polynomial 𝑝(𝑥)
+      , obtained using Algorithm 1. Hence, all of them are shifted versions of the others. The shift 𝜃𝑗
+       of 𝐷𝑗
+       with respect to 𝐷0
+       allows one to obtain the state of the j-th LFSR (the one that generates 𝐷𝑗
+      ) from the state of the 0-th LFSR as follows:
+      (𝑑0,𝑗,𝑑1,𝑗,⋯,𝑑𝑛·𝐿−1,𝑗)=(𝑑0,0,𝑑1,0,⋯,𝑑𝑛·𝐿−1,0)𝐴𝜃𝑗,
+      (9)where A is the connection matrix of 𝑝(𝑥)
+      , that is:
+      𝐴=⎡⎣⎢⎢⎢⎢⎢⎢010⋮0001⋮0⋯⋯⋯⋱⋯000⋮1𝑐𝑛·𝐿𝑐𝑛·𝐿−1𝑐𝑛·𝐿−2⋮𝑐1⎤⎦⎥⎥⎥⎥⎥⎥
+      (10)
+      The computation of 𝜃𝑗
+       is not an easy task. Furthermore, the computation of 𝐴𝜃𝑗
+       is time-consuming. Instead, we can obtain the matrix 𝐴(𝑗)=𝐴𝜃𝑗
+       solving the linear equation system of Equation (9). Note that we have n matrices 𝐴(𝑗)
+       to compute and thus n linear systems to solve. The linear system in Equation (9), stated using the first 𝑛𝐿
+       element, the seed, has 𝑛𝐿
+       equations and 𝑛2𝐿2
+       unknowns. Each new element of the sequence defines 𝑛𝐿
+       new equations with the same unknowns. Hence, the 2𝐿𝑛+1
+       elements of the m-sequence in 𝐺𝐹(2𝑛)
+       generated in Algorithm 1 to obtain 𝑝(𝑥)
+       provide enough equations to solve the systems. As an example, we consider a 3-stage LFSR defined in 𝐺𝐹(24)
+      , that is, the LFSR <3,𝑓(𝑥),4>
+      , where 𝑓(𝑥)=1+𝑥+(0𝑥9)𝑥3
+       is primitive over 𝐺𝐹(24)
+       and the primitive polynomial 𝑥4+𝑥+1
+       has been used to construct 𝐺𝐹(24)
+      . From the initial seed (1,1,1,1),(0,0,0,0),(0,1,1,0)
+       or, equivalently, (1+𝛼+𝛼2+𝛼3,0,𝛼+𝛼2)
+      , 𝛼
+       being a root of 𝑥4+𝑥+1
+      , the LFSR <3,𝑓(𝑥),4>
+       generates the following sequence:
+      001000001100111010010000⋯101001011000000001010001⋯101110100000001111001000⋯001110000001000101100011⋯
+      (11)where the elements of 𝐺𝐹(24)
+       are represented in columns with the least significant bit at the top. The four decimated sequences are all generated by the same primitive polynomial 𝑝(𝑥)=𝑥12+𝑥6+𝑥5+𝑥3+1
+       and, hence, all of them are shifted versions of the same m-sequence. Solving the system in Equation (9), we obtain the matrices 𝐴(1),𝐴(2),𝐴(3)
+      :
+      𝐴(1)=⎡⎣⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢100000000110010000000011101000000001110100000000011010000000001101000000000110100110000011010101000001101010000000110011000000011001000000001100⎤⎦⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥𝐴(2)=⎡⎣⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢000000101010000000010101100000001010110000000101111000000010011100000001101110101010010111111111001011111111000101010101000010101010000001010101⎤⎦⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥𝐴(3)=⎡⎣⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢⎢000111111111000011111111000001111111000000111111100000011111010000001111001111111000100000000011110000000001111111111111011111111111001111111111⎤⎦⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥⎥
+      (12)
+      Since the decimated sequences have a small period of 212−1=4095
+      , we have also compared them to obtain the shifts 𝜃1=3276
+      , 𝜃2=3549
+      , and 𝜃3=3822
+      . In a real scenario, 𝜃𝑗
+       is not going to be computed. It is important to point out that the calculation of the 𝐴(𝑗)
+       matrices can be performed prior to the normal operation of the LFSR since they do not depend on the seeds.
+      3.2. Computation of Seeds
+      Let us consider that the shift matrices 𝐴(𝑗)=𝐴𝜃𝑗
+       have already been precomputed. For any given seed (𝑑0,𝑑1,⋯,𝑑𝐿−1)
+      , the seeds of the binary LFSRs can be represented as:
+      (𝑑0,𝑗,𝑑1,𝑗,⋯,𝑑𝑛·𝐿−1,𝑗)=(𝑑0,0,𝑑1,0,⋯,𝑑𝑛·𝐿−1,0)𝐴(𝑗),
+      (13)where 𝑑𝐿,𝑗,⋯,𝑑𝑛·𝐿−1,𝑗
+       are unknowns for every 0≤𝑗≤𝑛−1
+      . The values 𝑑𝐿,0,
+      ⋯,
+      𝑑𝑛·𝐿−1,0
+       can be obtained solving the linear system composed with the (𝑛·𝐿−𝐿)
+       equations with the known values 𝑑0,𝑗,𝑑1,𝑗,⋯,𝑑𝐿−1,𝑗,
+       for 0≤𝑗≤𝑛−1
+      , i.e.:
+      𝑑𝑖,𝑗=∑𝑘=0𝑛·𝐿−1𝑑𝑘,0𝑎(𝑗)𝑘,𝑖,0≤𝑖≤𝐿−1,1≤𝑗≤𝑛−1,
+      (14)where 𝑎(𝑗)𝑘,𝑖
+       are the components of the matrix 𝐴(𝑗)
+      . The remaining seeds (𝑑0,𝑗,𝑑1,𝑗,
+      ⋯,𝑑𝑛·𝐿−1,𝑗)
+      , with 1≤𝑗≤𝐿−1
+      , are calculated using Equation (13). Considering the precomputed matrices in Equation (12) of the previous example, the Equation (13) can be written as:
+      (1,0,1,𝑑3,1,⋯,𝑑11,1)=(0,0,1,𝑑3,0,⋯,𝑑11,0)𝐴(1)(1,0,1,𝑑3,2,⋯,𝑑11,2)=(0,0,1,𝑑3,0,⋯,𝑑11,0)𝐴(2)(0,0,1,𝑑3,3,⋯,𝑑11,3)=(0,0,1,𝑑3,0,⋯,𝑑11,0)𝐴(3)
+      (15)
+      Solving for (𝑑3,0,⋯,𝑑11,0)
+      , we obtained the complete seed for the sequence 𝐷0
+      , that is, (0,0,1,0,0,0,0,0,1,1,0)
+      . Next, using the matrices 𝐴(1)
+      , 𝐴(2)
+       and 𝐴(3)
+      , the complete seeds of the sequences 𝐷1
+      , 𝐷2
+      , and 𝐷3
+       are obtained. Hence, we have:
+      𝑠𝑒𝑒𝑑0=(0,0,1,0,0,0,0,0,1,1,0)𝑠𝑒𝑒𝑑1=(1,0,1,0,0,1,0,1,1,0,0)𝑠𝑒𝑒𝑑2=(1,0,1,1,1,0,1,0,0,0,0)𝑠𝑒𝑒𝑑3=(0,0,1,1,1,0,0,0,0,0,0)
+      (16)
+      3.3. Grouped Operations
+      Once the n binary LFSRs have been constructed, it is time to generate the sequence. Instead of running n independent instances of the binary LFSR, which require 1-bit operations with an n-bit processor, we propose to group the n LFSRs into a unique LFSR with connection polynomial 𝑝(𝑥)
+       but using n-bit cells. The result is not an LFSR over 𝐺𝐹(2𝑛)
+       but a parallel implementation of n LFSR over 𝐺𝐹(2)
+       using only one processor. Since the addition and multiplication in the binary LFSRs correspond to the XOR and AND bitwise operations, respectively, instead of applying the XOR to 1-bit values, we apply it over n-bit values. The processor takes the same time to perform the XOR operation with 1-bit values than with n-bit values because the word length is n, thus saving a lot of execution time. Hence, Equation (4) can be redefined as follows:
+      ⎡⎣⎢⎢⎢𝑑𝑖,0⋮𝑑𝑖,𝑛−1⎤⎦⎥⎥⎥=𝑐1⎡⎣⎢⎢⎢𝑑𝑖−1,0⋮𝑑𝑖−1,𝑛−1⎤⎦⎥⎥⎥+𝑐2⎡⎣⎢⎢⎢𝑑𝑖−2,0⋮𝑑𝑖−2,𝑛−1⎤⎦⎥⎥⎥+⋯+𝑐𝐿⎡⎣⎢⎢⎢𝑑𝑖−𝐿𝑛,0⋮𝑑𝑖−𝐿𝑛,𝑛−1⎤⎦⎥⎥⎥,
+      (17)in such a way that the n sequences stated in Equation (7) are simultaneously generated using a unique polynomial 𝑝(𝑥)
+       (see Equation (5)).
+      From the practical implementation perspective, there is no difference at all with respect to preforming a classical binary LFSR, which includes coding and execution, since the 1-bit XOR operation is actually performed taking n-bit operands. Hence, the n-bit grouped operation proposed in this paper is a way of not wasting the capacity of the operations of the n-bit processors. As a consequence, this implementation method increases the bit generation net rate by n because the generation of a new element of a 32-bit m-sequence takes the same amount of time as a new element of a 1-bit m-sequence.
+      4. Primitiveness Test
+      As mentioned in Section 2.2, the m-sequences generated by an LFSR in 𝐺𝐹(2𝑛)
+       can be decomposed into n m-sequences generated by n LFSRs in 𝐺𝐹(2)
+      , so that when the feedback polynomial of the LFSR in the extended field is primitive, all LFSRs in 𝐺𝐹(2)
+       have the same feedback polynomial, and it is also primitive. This relationship is what allows us to propose an algorithm to check if a polynomial is primitive over 𝐺𝐹(2𝑛)
+      .
+      In general terms, to check if a polynomial 𝑓(𝑥)
+       over 𝐺𝐹(2𝑛)
+       is primitive, we propose to build an LFSR whose feedback polynomial is 𝑓(𝑥)
+       and generate 2·𝑚·𝑛+1
+       elements, at least. The sequence generated by concatenating all generated elements is decomposed into n binary sequences by decimating by n, as it is stated in Equation (7). Next, the n sequences are processed to obtain the minimal polynomials of the binary LFSRs that generate them (This can be achieved using the Berlekamp–Massey algorithm). If all the n sequences are generated by the same polynomial and it is also primitive, then 𝑓(𝑥)
+       is primitive over 𝐺𝐹(2𝑛)
+      . Algorithm 1 can be extended including one more step (step 5) to perform the check, resulting in Algorithm 2.
+      Algorithm 2: Primitiveness test.
+      Mathematics 10 00996 i001
+      As an example, let us consider the degree 6 polynomial 𝑓(𝑥)=0𝑥1+0𝑥2·𝑥+0𝑥4·𝑥2+0𝑥8·𝑥3+0𝑥5·𝑥4+0𝑥9·𝑥5+𝑥6∈𝐺𝐹[24,𝑥]
+      , where the primitive polynomial ℎ(𝑥)=𝑥4+𝑥+1
+       has been used to construct 𝐺𝐹(24)
+      . In order to check if 𝑓(𝑥)
+       is primitive, we consider 𝑓(𝑥)
+       as the feedback polynomial of an LFSR in the 𝐺𝐹(24)
+       of 6 cells. For a random seed (0𝑥9,0𝑥4,0𝑥5,0𝑥9,0𝑥5,0𝑥1)
+      , we generate 2𝑚𝑛+1=49
+       elements, giving rise to the following decimated sequences:
+      𝐷0=0010011011100000011010110001000000101011001111100𝐷1=0101100111010011110000001010111101111001011010001𝐷2=0000000011000101110101100100010010011000001000101𝐷3=1111011111000011001111010101101110100100010100001
+      (18)
+      The same minimal polynomial 𝑝(𝑥)
+       is obtained for each 𝐷𝑖
+       sequence by means of the Massey–Berlekamp algorithm [18]. The polynomial is the following:
+      𝑝(𝑥)=𝑥24+𝑥23+𝑥22+𝑥21+𝑥20+𝑥19+𝑥15+𝑥14+𝑥9+𝑥8+𝑥7+𝑥6+1
+      (19)
+      Since 𝑝(𝑥)
+       is primitive over 𝐺𝐹(2)
+      , we can conclude that 𝑓(𝑥)
+       is primitive over 𝐺𝐹(24)
+      .
+      5. Efficiency and Security
+      The implementation presented in Section 3 considerably reduces the execution time of the LFSRs defined in 𝐺𝐹(2𝑛)
+      . Specifically, an implementation of the LFSR used in the SNOW 3G stream cipher has been performed and compared with the implementation provided in the technical specification of the protocol [10]. This is an LFSR <16,𝑓(𝑥),32>
+      . Hence, the equivalent model is based on 32 LFSRs <512,𝑝(𝑥)>
+      . The polynomial 𝑝(𝑥)
+       is built from 1024 elements generated using the official implementation [10] following the steps established in Algorithm 1. The result is that the 32 decimated sequences have the same minimal polynomial 𝑝(𝑥)
+       of degree 512, whose coefficients are represented below in compact hexadecimal format:
+      84009𝐶624𝐷4𝐹75𝐹17𝐸𝐷𝐴41𝐶663𝐶5𝐷𝐹𝐷𝐸𝐷8𝐴535𝐷𝐴1𝐶5𝐹70824152𝐴7
+      (20)
+      𝐶23𝐸𝐷𝐵90𝐷572852𝐴765𝐹𝐹5𝐹2012𝐴64𝐹5𝐷3𝐹𝐷361𝐵005𝐴𝐷𝐵𝐴45𝐴1995
+      (21)
+                        𝐸64𝐸48362706𝐷62606828
+      (22)
+      Despite the fact that 𝑝(𝑥)
+       has 250 non-zero coefficients, and therefore 250 XOR operations are required to generate the next element in the sequence, the execution time is 3.3 times lower than the original implementation. The computation of the matrices 𝐴(𝑗)
+       is not considered, since this is performed prior to the normal operating of the LFSR. The times have been calculated by taking the average of 10 repetitions of each generation of 1000, 10,000, 20,000, 50,000, and 100,000 elements. Both implementations have been made in Python 3.9 language and have been executed on an Intel(R) Core(TM) i7-10510U 64-bit processor with 16 GB of RAM. Although the SNOW 3G algorithm has been designed to be executed on 32-bit platforms, the tests carried out on a 64-bit processor are completely valid since the greater word length of the processor compared to the algorithm does not affect the normal execution of our implementation. Note that the goal is to achieve an implementation of an algorithm defined in 𝐺𝐹(2𝑛)
+       using n-bit operations. The case of working with processors of more than n bits offers the possibility of developing new faster implementations to make the most of their capacity, but requires adapting the algorithms to the new processor architecture. This is outside the scope of this work.
+      As mentioned in the Section 3, the net bit generation rate is increased by n when compared to a single binary LFSR implementation, that is, to a binary LFSR using the same connection polynomial. However, the improvement observed in the tests on SNOW 3G does not reach the net rate. This is mainly due to the number of non-zero coefficients in 𝑝(𝑥)
+       that slow down the computation. Therefore, in the case of equivalent binary polynomials 𝑝(𝑥)
+       with a few nonzero coefficients, the real rate will reach the net rate. In the general case, the fewer non-zero coefficients in 𝑝(𝑥)
+      , the greater the improvement to the generation rate.
+      The efficiency of the proposed implementations, shown in Section 3 affects the security of the cryptosystems used by these LFSRs, although, in general, they are not intended to replace those currently used by most devices, such as smartphones, but rather for use in mobile devices without any type of restriction, such as personal computers or servers. Using the equivalent model implies multiplying by n, the number of bits needed to generate a new element of the m-sequence over 𝐺𝐹(2𝑛)
+      , that is, to generate n bits. In the case of SNOW 3G, it goes from 512 to 16,384 bits. Therefore, the theoretical improvement of the execution time by a factor n is associated with an increase in the same factor n in the amount of memory needed to generate the same number of bits. As a consequence, this implementation provides a substantial improvement for the calculation of m-sequences that, although it could not be deployed on some devices, could always be used for cryptanalysis tasks. Regarding the cost of our proposal, an increment in the memory cells must be taken in mind, rising from 𝑛𝐿
+       to 𝑛2𝐿
+       bits.
+      Regarding the algorithm for primitiveness testing, we can conclude that it has a better performance than O’Connor’s algorithm, one of the most used ones. The main advantage is that the proposed algorithm has to generate 2𝑚𝑛+1
+       elements instead of the whole sequence or alternatively to perform as many divisions as elements in the maximal sequence over the extended field. The validation and comparison tests have been performed using Mathematica software, version 10.0.0
+      , on a 64-bits Microsoft Windows platform running on a Intel(R) Core (TM) processor with i7-4510U CPU @ 2.00
+       GHz and 16 GB RAM. The processor’s temperature and the amount of simultaneous running processes have been taken into account for the execution time comparison. Figure 4 shows the behavior of the algorithm with respect to O’Connor’s in 𝐺𝐹(28)
+       and 𝐺𝐹(216)
+      , respectively.
+      Mathematics 10 00996 g004 550Figure 4. Execution time in 𝐺𝐹(28)
+       and 𝐺𝐹(216)
+      .
+      6. Conclusions
+      In this article, we have presented two real applications of the relationships between the m-sequences in 𝐺𝐹(2𝑛)
+       and 𝐺𝐹(2)
+      . The first one is a new algorithm designed to verify the primitiveness of polynomials with coefficients in 𝐺𝐹(2𝑛)
+       that improves the execution times of existing methods. The second one is the support of an efficient implementation of the LFSRs defined over the extended field 𝐺𝐹(2𝑛)
+      , which improves the other implementations. It enables better performance of the LFSR-based stream ciphers, often used in high speed communication systems. The improvement is achieved by a combination of the binary equivalent model of LFSRs in the extended field, which uses only binary operations, and the n-bit grouped operation that take advantage of the n-bit processors. The feasibility of the implementation has been shown by applying it to the SNOW 3G stream cipher, whose execution time has been reduced by a factor of 3.3 with respect to the code provided in the technical specification of the protocol. These results can also be extended to cryptanalysis, making use of not only the grouped operations but of the underlying binary structure that may facilitate the parallelization of the operations. On the other hand, the proposed implementation is software-oriented, although the binary operations also allow hardware implementations. In this way, we provide a complete method to efficiently increase the bit generation rate.
+
+</div>
+
+<a href="C:\My Folder\5th Semester\CRYPTOGRAPHY\New folder\trial.rar" download>link_text</a>
+
+
+</body>
+</html>
+
+
